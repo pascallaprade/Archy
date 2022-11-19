@@ -4,6 +4,8 @@ export type PayloadDto = {
   user_id: string,
   mentions: string[],
   params: string[],
+  message_id: string,
+  channel_id: string,
 }
 
 export type Payload = {
@@ -12,6 +14,8 @@ export type Payload = {
   userId: string,
   mentions: string[],
   params: string[],
+  messageId: string,
+  channelId: string,
 }
 
 export const dtoToPayload = (dto: PayloadDto): Payload => ({
@@ -20,4 +24,6 @@ export const dtoToPayload = (dto: PayloadDto): Payload => ({
   userId: dto.user_id ?? '',
   mentions: dto.mentions ?? [],
   params: dto.params ?? [],
+  messageId: dto.message_id ?? '',
+  channelId: dto.channel_id ?? '',
 })
